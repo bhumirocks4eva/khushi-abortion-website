@@ -20,6 +20,10 @@
   <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
 
   <!-- Template Main CSS File -->
   <link href="css/style.css" rel="stylesheet">
@@ -275,59 +279,60 @@
     <!-- ======= Appointment Section ======= -->
     <section id="appointment" class="appointment section-bg">
       <div class="container">
-
-        <div class="section-title">
-          <h2>Make an Appointment</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <form accept="" role="form" class="php-email-form">
-          <div class="row">
-            <div class="col-md-4 form-group">
-              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" >
-            </div>
-            <div class="col-md-4 form-group mt-3 mt-md-0">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" >
-             
-            </div>
-            <div class="col-md-4 form-group mt-3 mt-md-0">
-              <input type="tel" class="form-control" name="phone" id="phone" placeholder="Your Phone" >
-              
-            </div>
+          <div class="section-title">
+              <h2>Make an Appointment</h2>
+              <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
           </div>
-          <div class="row">
-            <div class="col-md-4 form-group mt-3">
-              <input type="datetime" name="date" class="form-control datepicker" id="date" placeholder="Appointment Date" >
-              
-            </div>
-            <div class="col-md-4 form-group mt-3">
-              <select name="age" id="age" class="form-select">
-                <option value="">Select Age</option>
-                <option value="Department 1">Below 18</option>
-                <option value="Department 2">18-40</option>
-                <option value="Department 3">40 above</option>
-              </select>
-              
-            </div>
-            <div class="col-md-4 form-group mt-3">
-              <select name="doctor" id="doctor" class="form-select">
-                <option value="">Select Doctor</option>
-                <option value="Doctor 1">Doctor 1</option>
-                <option value="Doctor 2">Doctor 2</option>
-                <option value="Doctor 3">Doctor 3</option>
-              </select>  
-            </div>
-          </div>
-
-          <div class="form-group mt-3">
-            <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)"></textarea>
-            
-          </div>
-          <div class="text-center"><button type="submit">Make an Appointment</button></div>
-        </form>
-
+          
+        <form  action="php/sendmail.php" method="post" role="form" class="php-email-form" onsubmit="return validateForm()">
+              <div class="row">
+                  <div class="col-md-4 form-group">
+                      <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                  </div>
+                  <div class="col-md-4 form-group mt-3 mt-md-0">
+                      <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                  </div>
+                  <div class="col-md-4 form-group mt-3 mt-md-0">
+                      <input type="tel" class="form-control" name="phone" id="phone" placeholder="Your Phone" required>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-4 form-group mt-3">
+                      <input type="text" name="date" class="form-control datepicker" id="date" placeholder="Appointment Date" required>
+                  </div>
+                  <div class="col-md-4 form-group mt-3">
+                      <select name="age" id="age" class="form-select" required>
+                          <option value="">Select Age</option>
+                          <option value="Below 18">Below 18</option>
+                          <option value="18-40">18-40</option>
+                          <option value="40 above">40 above</option>
+                      </select>
+                  </div>
+                  <div class="col-md-4 form-group mt-3">
+                      <select name="doctor" id="doctor" class="form-select" required>
+                          <option value="">Select Doctor</option>
+                          <option value="Doctor 1">Doctor 1</option>
+                          <option value="Doctor 2">Doctor 2</option>
+                          <option value="Doctor 3">Doctor 3</option>
+                          <option value="Doctor 4">Doctor 4</option>
+                      </select>
+                  </div>
+              </div>
+      
+              <div class="form-group mt-3">
+                  <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)"></textarea>
+              </div>
+              <div class="text-center">
+                  <div class="loading d-none">Loading...</div>
+                  <div class="sent-message d-none">Appointment request sent successfully.</div>
+                  <div class="error-message d-none">Failed to send appointment request.</div>
+                  <button type="submit">Make an Appointment</button>
+              </div>
+          </form>
       </div>
-    </section><!-- End Appointment Section -->
+  </section>
+  
+    <!-- End Appointment Section -->
 
     
 
@@ -423,7 +428,7 @@
 
         <div class="section-title">
           <h2>Contact</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi reprehenderit eligendi, expedita odio eaque impedit earum ratione molestias cupiditate delectus, soluta temporibus culpa et adipisci.</p>
         </div>
       </div>
 
@@ -566,6 +571,7 @@
 
   <!-- Template Main JS File -->
   <script src="js/main.js"></script>
+  
 
 </body>
 
