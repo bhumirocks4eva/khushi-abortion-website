@@ -97,10 +97,10 @@ function validateForm() {
   let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
   let phonePattern = /^(?:\+977)?9[78]\d{8}$/;
 
-  if (!email.match(emailPattern)) {
-    alert("Please enter a valid email address.");
-    return false;
-  }
+  // if (!email.match(emailPattern)) {
+  //   alert("Please enter a valid email address.");
+  //   return false;
+  // }
 
   if (!phone.match(phonePattern)) {
     alert("Please enter a valid Nepali phone number.");
