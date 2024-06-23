@@ -162,27 +162,27 @@
 })();
 
 //validate form
-$(function () {
-  $("#date").datepicker({
-    dateFormat: "yy-mm-dd",
-    minDate: 0,
-  });
-});
+// $(function () {
+//   $("#date").datepicker({
+//     dateFormat: "yy-mm-dd",
+//     minDate: 0,
+//   });
+// });
 
 function validateForm() {
   var email = document.getElementById("email").value;
   var phone = document.getElementById("phone").value;
   var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
   var phonePattern = /^(?:\+977)?9[78]\d{8}$/;
-
-  if (!email.match(emailPattern)) {
-    alert("Please enter a valid email address.");
-    return false;
-  }
-
-  if (!phone.match(phonePattern)) {
-    alert("Please enter a valid Nepali phone number.");
-    return false;
-  }
-  return true;
 }
+// if (!email.match(emailPattern)) {
+//   alert("Please enter a valid email address.");
+//   return false;
+// }
+
+//   if (!phone.match(phonePattern)) {
+//     alert("Please enter a valid Nepali phone number.");
+//     return false;
+//   }
+//   return true;
+// }
