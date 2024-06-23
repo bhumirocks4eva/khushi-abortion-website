@@ -1184,3 +1184,80 @@ section {
   visibility: visible;
   opacity: 1;
 }
+/*. ---------------------WHATTSAPPP BUTTON AND MESSANGER BUTTON----------------*/
+.contact-buttons {
+  position: fixed;
+  bottom: 60px;
+  right: 10px;
+  z-index: 1000;
+}
+
+.whatsapp-button,
+.messenger-button {
+  background-color: #25d366;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px; /* Add spacing between buttons */
+  transition: all 0.4s;
+}
+
+.whatsapp-button a,
+.messenger-button a {
+  display: flex; /* Make the link flex container */
+  justify-content: center; /* Center icon horizontally */
+  align-items: center; /* Center icon vertically */
+  width: 100%;
+  height: 100%;
+  text-decoration: none; /* Remove underline from link */
+}
+
+.whatsapp-button i,
+.messenger-button i {
+  font-size: 24px; /* Adjust icon size */
+  color: #fff; /* Icon color */
+}
+/*---------------------IMAGE GALLERY SECTION----------------*/
+
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center; /* Center the gallery */
+}
+
+.image-item {
+  flex: 1 1 calc(33.333% - 10px); /* 3 columns layout */
+  max-width: calc(33.333% - 10px);
+  box-sizing: border-box;
+}
+
+.image-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.image-item img:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .image-item {
+    flex: 1 1 calc(50% - 10px); /* 2 columns layout for tablets */
+    max-width: calc(50% - 10px);
+  }
+}
+
+@media (max-width: 480px) {
+  .image-item {
+    flex: 1 1 100%; /* 1 column layout for mobile */
+    max-width: 100%;
+  }
+}
